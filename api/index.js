@@ -3,6 +3,9 @@ import express from "express";
 const app = express();
 const port = 4000;
 
+// Import Routes
+import rotasPrestadores from './routes/prestador.js';
+
 // Parse JSON
 app.use(express.json());
 
@@ -13,10 +16,12 @@ app.use('/', express.static('public'));
 app.use('/favicon.ico', express.static('public/images/favicon.png'));
 
 // Rotas API
+app.use('/api/prestadores', rotasPrestadores);
+
 app.get('/api', (req, res) => {
     res.status(200).json({
         message: 'API Online',
-        version: '1.0.0'
+        version: '1.0.1'
     });
 });
 
