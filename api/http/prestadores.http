@@ -1,0 +1,60 @@
+// Teste requsições REST da collection Prestadores
+
+@baseURL = http://localhost:4000/api/prestadores
+
+// GET - Lista todos os registros
+GET {{baseURL}}
+Content-Type: application/json
+
+###
+// GET - Lista um registro pelo ID
+GET {{baseURL}}/650859f15adcbaefe6105d21
+Content-Type: application/json
+
+###
+// GET - Lista um registro pela Razão Social
+GET {{baseURL}}/razao/maria
+Content-Type: application/json
+
+###
+// DELETE - Apaga um registro pelo ID
+DELETE {{baseURL}}/650859460ad265affde96f32
+Content-Type: application/json
+
+###
+// POST - Insere novo registro
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "cnpj": "45165632890011",
+    "razao_social": "JOSUÉ ALVES ME",
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "JOSUÉ BOY",
+    "data_inicio_atividade": "2020-08-01",
+    "localizacao": {
+        "type": "Point",
+        "coordinates": [-23.2904, -47.2964]
+    }
+}
+
+###
+// POST - Altera um registro pelo ID
+PUT {{baseURL}}
+Content-Type: application/json
+
+{
+    "_id": "650859f15adcbaefe6105d21",
+    "cnpj": "45165632890011",
+    "razao_social": "JOSUÉ ALVES ME ALTERADO",
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "JOSUÉ BOY 2",
+    "data_inicio_atividade": "2020-08-01",
+    "localizacao": {
+      "type": "Point",
+      "coordinates": [
+        -23.2904,
+        -47.2964
+      ]
+    }
+}
