@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ###
-// POST - Altera um registro pelo ID
+// PUT - Altera um registro pelo ID
 PUT {{baseURL}}
 Content-Type: application/json
 

@@ -1,0 +1,16 @@
+// Teste requsições REST da collection Usuários
+
+@baseURL = http://localhost:4000/api/usuarios
+
+// POST - Insere novo registro
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "nome": "Ednaldo Pereira",
+    "email": "ednaldo.pereira@gmail.com",
+    "senha": "Senha@123",
+    "ativo": true,
+    "tipo": "Cliente",
+    "avatar": "https://ui-avatars.com/api/?name=Ednaldo+Pereira"
+}

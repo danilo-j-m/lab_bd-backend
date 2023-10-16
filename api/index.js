@@ -5,6 +5,7 @@ const port = 4000;
 
 // Import Routes
 import rotasPrestadores from './routes/prestador.js';
+import rotasUsuarios from './routes/usuario.js';
 
 // Parse JSON
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use('/favicon.ico', express.static('public/images/favicon.png'));
 
 // Rotas API
 app.use('/api/prestadores', rotasPrestadores);
+app.use('/api/usuarios', rotasUsuarios);
 
 app.get('/api', (req, res) => {
     res.status(200).json({

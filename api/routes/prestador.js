@@ -124,7 +124,7 @@ router.post('/', validaPrestador, async (req, res) => {
         await
             db.collection(collection)
             .insertOne(req.body)
-            .then(result => res.status(200).send(result))
+            .then(result => res.status(201).send(result))
             .catch(err => res.status(400).json(err))
         ;
     }
