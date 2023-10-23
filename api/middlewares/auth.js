@@ -26,7 +26,7 @@ export default async function auth(req, res, next) {
         console.error(err.message);
 
         return res.status(403).send({
-            error: `Token inválido: ${error.message}`
+            error: `Token inválido: ${err.message}`
         });
     }
 }

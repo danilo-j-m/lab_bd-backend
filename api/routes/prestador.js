@@ -8,6 +8,8 @@ const router = express.Router();
 const { db, ObjectId } = await connectToDatabase();
 const collection = 'prestadores';
 
+import auth from '../middlewares/auth.js';
+
 const validaPrestador = [
     check('cnpj')
         .not().isEmpty().trim().withMessage('CNPJ é obrigatório.')
@@ -102,7 +104,7 @@ router.get('/razao/:razao', async (req, res) => {
     DELETE api/prestadores/id
     Exclui um prestador por ID
 */
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     await
         db.collection(collection)
         .deleteOne({ _id: { $eq: ObjectId(req.params.id) } })
@@ -115,7 +117,7 @@ router.delete('/:id', async (req, res) => {
     POST api/prestadores
     Insere um novo prestador
 */
-router.post('/', validaPrestador, async (req, res) => {
+router.post('/', auth, validaPrestador, async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
@@ -134,7 +136,7 @@ router.post('/', validaPrestador, async (req, res) => {
     PUT api/prestadores/id
     Altera um prestador pelo ID
 */
-router.put('/', validaPrestador, async (req, res) => {
+router.put('/', auth, validaPrestador, async (req, res) => {
     const id = req.body._id; // armazena id do documento
     delete req.body._id;     // exclui o id do documento do body
 

@@ -13,3 +13,9 @@ db.usuarios.insertOne({
 // Cria índice único
 use('FatecItu');
 db.usuarios.createIndex({ 'email': 1 }, { unique: true });
+
+use('FatecItu');
+db.usuarios.drop();
+
+use('FatecItu');
+db.usuarios.find();

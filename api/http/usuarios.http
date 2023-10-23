@@ -14,3 +14,44 @@ Content-Type: application/json
     "tipo": "Cliente",
     "avatar": "https://ui-avatars.com/api/?name=Ednaldo+Pereira"
 }
+
+
+###
+// POST - Efetua o login
+POST {{baseURL}}/login
+Content-Type: application/json
+
+{
+    "email": "ednaldo.pereira@gmail.com",
+    "senha": "Senha@123"
+}
+
+
+###
+// GET - Lista os usuários
+GET {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZlNjY0YTFhMThhYjAzZWE4NjVjIn0sImlhdCI6MTY5ODA3MjA0NiwiZXhwIjoxNjk4MzMxMjQ2fQ.m9QvIfpwZmzAwekobL3FA2HQALHP9bl1ksIEyQESL3M
+
+
+###
+// DELETE - Remove um usuário pelo ID
+DELETE {{baseURL}}/653688d620e6b491797ca849
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZlNjY0YTFhMThhYjAzZWE4NjVjIn0sImlhdCI6MTY5ODA3MjA0NiwiZXhwIjoxNjk4MzMxMjQ2fQ.m9QvIfpwZmzAwekobL3FA2HQALHP9bl1ksIEyQESL3M
+
+
+###
+// PUT - Update usuário pelo ID
+PUT {{baseURL}}/65368c742f51e1cabc26c86c
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjZlNjY0YTFhMThhYjAzZWE4NjVjIn0sImlhdCI6MTY5ODA3MjA0NiwiZXhwIjoxNjk4MzMxMjQ2fQ.m9QvIfpwZmzAwekobL3FA2HQALHP9bl1ksIEyQESL3M
+
+{
+    "nome": "Ednaldo Pereira",
+    "email": "ednaldo.pereira@gmail.com",
+    "senha": "Senha@123",
+    "ativo": true,
+    "tipo": "Cliente",
+    "avatar": "https://ui-avatars.com/api/?name=Ednaldo+Pereira"
+}
