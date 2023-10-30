@@ -113,7 +113,7 @@ router.post('/login', validaLogin, async (req, res) => {
             return res.status(404).json({
                 errors: [{
                     value: email,
-                    message: 'O e-mail informado não está cadastrado.',
+                    msg: 'O e-mail informado não está cadastrado.',
                     param: 'email'
                 }]
             });
@@ -125,7 +125,7 @@ router.post('/login', validaLogin, async (req, res) => {
             return res.status(403).json({
                 errors: [{
                     value: 'senha',
-                    message: 'A senha informada está incorreta.',
+                    msg: 'A senha informada está incorreta.',
                     param: 'senha'
                 }]
             });
